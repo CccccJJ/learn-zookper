@@ -61,7 +61,7 @@ public class DistributionClient {
                 handle();
             } else {
                 this.waitNode = children.get(i - 1);
-                zooKeeper.getData(parentNode + "/" + waitNode, true, new Stat());
+                zooKeeper.exists(parentNode + "/" + waitNode, true);
             }
         }
     }
